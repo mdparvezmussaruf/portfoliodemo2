@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Farhana — Premium Freelance Web Developer & Digital Marketer</title>
+  <meta name="description" content="Premium freelance web developer, SEO & digital marketing. Anime-tech aesthetic, fast, responsive and conversion-focused portfolio." />
+  <meta name="keywords" content="freelance web developer, SEO, SMM, portfolio, web design, UI UX, branding" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <meta name="theme-color" content="#0b0f1a" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Farhana — Premium Freelance Web Developer & Digital Marketer" />
+  <meta property="og:description" content="Futuristic anime-tech portfolio — websites, SEO, and branding that convert." />
+  <meta property="og:image" content="https://placehold.co/1200x630/png?text=Farhana+Portfolio" />
+
+  <!-- JSON-LD Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Farhana",
+    "url":"https://your-domain.com",
+    "jobTitle":"Freelance Web Developer & Digital Marketer",
+    "sameAs":[]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------------- VARIABLES ---------------- */
+    :root{
+      --bg:#05060a; --panel:rgba(255,255,255,0.04);
+      --muted:#9aa3b2; --glass:rgba(255,255,255,0.03);
+      --accent1:#7c3aed; --accent2:#06b6d4; --accent-glow: 0 8px 30px rgba(99,102,241,0.12);
+      --neon: linear-gradient(90deg,var(--accent1),var(--accent2));
+      --radius:18px;
+      --max:1200px;
+      --mono: 'Oxanium', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    html.light{ --bg:#f7fbff; --panel:rgba(10,12,20,0.04); --muted:#475569;}
+
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial;color:#e6eef8;background:linear-gradient(180deg,#05060a 0%, #071022 60%);-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+
+    /* ------------- HEADER ------------- */
+    header{position:fixed;left:0;right:0;top:12px;z-index:60;padding:10px 24px;display:flex;align-items:center;justify-content:center}
+    .nav{width:100%;max-width:var(--max);display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:12px;padding:6px;background:linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.08));box-shadow:var(--accent-glow)}
+    .brand h1{font-family:var(--mono);font-weight:800;margin:0;color:#fff;letter-spacing:0.4px}
+    nav a{color:var(--muted);text-decoration:none;margin:0 8px;font-weight:600}
+
+    /* ------------- HERO ------------- */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:120px 0 40px}
+    .hero-left h2{font-size:clamp(32px,6vw,56px);margin:0;line-height:1.02;font-weight:800;background:linear-gradient(90deg,#fff, #d3f7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{margin-top:14px;color:var(--muted);max-width:60ch}
+    .cta{margin-top:18px;display:flex;gap:12px;align-items:center}
+    .btn{padding:12px 18px;border-radius:12px;font-weight:700;border:1px solid rgba(255,255,255,0.06);cursor:pointer}
+    .btn.primary{background:var(--neon);box-shadow:var(--accent-glow);color:#051022}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .typing{font-family:monospace;color:var(--accent2);font-weight:700;margin-left:8px}
+
+    /* avatar card */
+    .card{border-radius:var(--radius);padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);box-shadow:0 10px 30px rgba(8,10,20,0.6);border:1px solid rgba(255,255,255,0.03);position:relative}
+    .avatar{width:320px;height:340px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);position:relative}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .avatar .outline{position:absolute;inset:6px;border-radius:12px;border:2px solid transparent;pointer-events:none;box-shadow:0 0 30px rgba(124,58,237,0.17);mix-blend-mode:screen}
+
+    /* floating elements */
+    .float{position:absolute;border-radius:999px;filter:blur(40px);opacity:0.85;mix-blend-mode:screen}
+    .blob1{width:260px;height:260px;left:-50px;top:40px;background:linear-gradient(45deg, rgba(124,58,237,0.6), rgba(6,182,212,0.4))}
+    .blob2{width:180px;height:180px;right:-40px;bottom:10px;background:linear-gradient(45deg, rgba(6,182,212,0.35), rgba(124,58,237,0.2))}
+
+    /* ---------------- SECTIONS ---------------- */
+    section{padding:80px 0}
+    .section-title{font-size:20px;font-weight:800;margin-bottom:12px}
+
+    /* services */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{padding:20px;border-radius:16px;background:var(--panel);transition:transform .28s, box-shadow .28s;border:1px solid rgba(255,255,255,0.03)}
+    .service:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(6,22,48,0.6)}
+
+    /* portfolio */
+    .filters{display:flex;gap:8px;flex-wrap:wrap}
+    .filter{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+    .filter.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041022}
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .project{position:relative;border-radius:12px;overflow:hidden;background:#0b1220;height:220px;display:flex;align-items:flex-end;padding:12px}
+    .project .meta{color:var(--muted);font-size:13px}
+
+    /* modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(1,2,6,0.6);z-index:120}
+    .modal.open{display:flex}
+    .modal .panel{width:90%;max-width:900px;background:linear-gradient(180deg,#08101a,#061020);padding:18px;border-radius:14px}
+
+    /* testimonials */
+    .testi{display:flex;gap:12px;align-items:center}
+    .stars{color:#fbbf24}
+
+    /* pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+    /* contact */
+    form input, form textarea{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+
+    /* chat widget */
+    .chat{position:fixed;right:22px;bottom:22px;z-index:140}
+    .chat .btn{border-radius:999px;padding:12px 14px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041022}
+
+    /* footer */
+    footer{padding:24px 0;color:var(--muted);text-align:center}
+
+    /* responsive */
+    @media (max-width:1000px){.hero{grid-template-columns:1fr;}.avatar{width:100%;height:320px}.grid{grid-template-columns:repeat(2,1fr)}.portfolio{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}.portfolio{grid-template-columns:1fr}.hero-left h2{font-size:28px}}
+
+    /* small animations */
+    @keyframes bob{0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)}}
+    .bob{animation:bob 7s ease-in-out infinite}
+
+    .fade-up{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
+    .in-view{opacity:1;transform:translateY(0)}
+
+    /* accessibility focus */
+    a:focus, button:focus, input:focus{outline:2px dashed rgba(124,58,237,0.8);outline-offset:4px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav wrap">
+      <div class="brand">
+        <div class="logo"><img src="https://placehold.co/80x80/png?text=AF" alt="logo" style="width:100%;height:100%;object-fit:cover;border-radius:8px"></div>
+        <div>
+          <h1>Farhana</h1>
+          <div style="font-size:12px;color:var(--muted)">Web Dev • SEO • Branding</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="btn" style="margin-left:10px">Toggle</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- FLOATING BLOBS -->
+    <div class="float blob1 bob"></div>
+    <div class="float blob2 bob" style="animation-delay:2s"></div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <h2>I craft modern, high-converting<br>web experiences — fast & SEO-first.</h2>
+        <p class="lead">Futuristic anime-tech designs with strategic performance & SEO. I help startups and brands scale with beautiful websites and data-driven marketing.</p>
+
+        <div class="cta">
+          <button class="btn primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+          <button class="btn ghost" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">View Portfolio</button>
+
+          <div style="margin-left:10px;display:flex;align-items:center">Skills:<div class="typing" id="liveTyping"></div></div>
+        </div>
+
+        <div style="margin-top:22px;display:flex;gap:12px">
+          <div class="card" style="width:220px">
+            <div style="font-size:12px;color:var(--muted)">Years</div>
+            <div style="font-weight:800;font-size:22px" id="counterYears">0</div>
+          </div>
+          <div class="card" style="width:220px">
+            <div style="font-size:12px;color:var(--muted)">Projects</div>
+            <div style="font-weight:800;font-size:22px" id="counterProjects">0</div>
+          </div>
+          <div class="card" style="width:220px">
+            <div style="font-size:12px;color:var(--muted)">Clients</div>
+            <div style="font-weight:800;font-size:22px" id="counterClients">0</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card avatar" aria-hidden="true">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:18px;">
+          <img src="https://placehold.co/600x700/png?text=Anime+Avatar" alt="anime avatar">
+        </div>
+        <div class="outline"></div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">About Me</div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <div style="flex:1;min-width:300px">
+          <p class="fade-up">I'm Farhana — a freelance web developer & digital marketer specializing in fast, SEO-optimized websites and conversion-led design. I combine anime-inspired visuals with sharp performance engineering to deliver premium results.</p>
+
+          <ul style="margin-top:12px;color:var(--muted)">
+            <li><strong>Experience:</strong> 5+ years building websites & marketing strategies</li>
+            <li><strong>Focus:</strong> React, HTML/CSS, Performance, SEO, SMM</li>
+            <li><strong>Certifications:</strong> Google Analytics, Google Ads, HubSpot Inbound</li>
+          </ul>
+        </div>
+
+        <div style="width:360px">
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:12px">
+              <img src="https://placehold.co/120x120/png?text=Avatar" alt="avatar" style="width:72px;height:72px;border-radius:12px;object-fit:cover">
+              <div>
+                <div style="font-weight:700">Farhana</div>
+                <div style="font-size:12px;color:var(--muted)">Freelance Web Developer & Marketer</div>
+              </div>
+            </div>
+            <div style="margin-top:12px;color:var(--muted)">Specialized in performance-first web builds, SEO strategies, and branding.</div>
+            <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+              <span class="filter">React</span>
+              <span class="filter">SEO</span>
+              <span class="filter">Tailwind</span>
+              <span class="filter">Branding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-title">Services</div>
+      <div class="grid">
+        <div class="service fade-up">
+          <h3>Website Development</h3>
+          <p class="meta">Fast, accessible, SEO-friendly websites with clean code and great UX.</p>
+        </div>
+        <div class="service fade-up">
+          <h3>SEO, SMM & SMO</h3>
+          <p class="meta">Technical SEO, content strategy, and social media management to grow traffic.</p>
+        </div>
+        <div class="service fade-up">
+          <h3>Digital Marketing</h3>
+          <p class="meta">Paid ads, funnel optimization and analytics for ROI-driven campaigns.</p>
+        </div>
+        <div class="service fade-up">
+          <h3>Graphic & Branding</h3>
+          <p class="meta">Brand identity, logos, and marketing assets with an anime-tech aesthetic.</p>
+        </div>
+        <div class="service fade-up">
+          <h3>UI / UX Design</h3>
+          <p class="meta">Design systems, prototypes, and interactive interfaces that convert.</p>
+        </div>
+        <div class="service fade-up">
+          <h3>Maintenance & Retainers</h3>
+          <p class="meta">Ongoing support, monitoring, and optimization services.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="section-title">Portfolio</div>
+      <div class="filters" role="tablist" aria-label="portfolio filters" style="margin-bottom:12px">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="web">Web Design</button>
+        <button class="filter" data-filter="branding">Branding</button>
+        <button class="filter" data-filter="marketing">Marketing</button>
+        <button class="filter" data-filter="ux">UI-UX</button>
+      </div>
+
+      <div class="portfolio" id="portfolioGrid">
+        <!-- sample projects -->
+        <div class="project" data-tags="web,ux" style="background-image:linear-gradient(0deg,rgba(2,6,23,0.6),transparent), url('https://placehold.co/600x400/png?text=Project+1');background-size:cover;background-position:center">
+          <div>
+            <div style="font-weight:700;color:white">Project Alpha</div>
+            <div class="meta">E-commerce • React</div>
+          </div>
+        </div>
+        <div class="project" data-tags="branding,web" style="background-image:linear-gradient(0deg,rgba(2,6,23,0.6),transparent), url('https://placehold.co/600x400/png?text=Project+2');background-size:cover;background-position:center">
+          <div>
+            <div style="font-weight:700;color:white">Brand Nova</div>
+            <div class="meta">Branding • Visual Identity</div>
+          </div>
+        </div>
+        <div class="project" data-tags="marketing" style="background-image:linear-gradient(0deg,rgba(2,6,23,0.6),transparent), url('https://placehold.co/600x400/png?text=Project+3');background-size:cover;background-position:center">
+          <div>
+            <div style="font-weight:700;color:white">Growth Boost</div>
+            <div class="meta">Paid Ads • Conversion</div>
+          </div>
+        </div>
+        <div class="project" data-tags="web" style="background-image:linear-gradient(0deg,rgba(2,6,23,0.6),transparent), url('https://placehold.co/600x400/png?text=Project+4');background-size:cover;background-position:center">
+          <div>
+            <div style="font-weight:700;color:white">Studio Site</div>
+            <div class="meta">Portfolio • UI</div>
+          </div>
+        </div>
+        <div class="project" data-tags="ux,branding" style="background-image:linear-gradient(0deg,rgba(2,6,23,0.6),transparent), url('https://placehold.co/600x400/png?text=Project+5');background-size:cover;background-position:center">
+          <div>
+            <div style="font-weight:700;color:white">App Flow</div>
+            <div class="meta">UX • Prototyping</div>
+          </div>
+        </div>
+        <div class="project" data-tags="marketing,web" style="background-image:linear-gradient(0deg,rgba(2,6,23,0.6),transparent), url('https://placehold.co/600x400/png?text=Project+6');background-size:cover;background-position:center">
+          <div>
+            <div style="font-weight:700;color:white">Landing Lead</div>
+            <div class="meta">Landing Page • CRO</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for project preview -->
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="panel card">
+        <button id="closeModal" style="float:right" class="btn ghost">Close</button>
+        <h3 id="modalTitle">Project Title</h3>
+        <p id="modalDesc" style="color:var(--muted)"></p>
+        <div style="margin-top:12px"><img id="modalImage" src="https://placehold.co/900x500/png?text=Preview" alt="preview" style="width:100%;border-radius:8px"></div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="section-title">Testimonials</div>
+      <div class="testi card">
+        <div style="flex:1">
+          <div style="font-weight:700">"Delivered an exceptional site that converted quickly."</div>
+          <div class="meta">— Client A <span class="stars">★★★★★</span></div>
+        </div>
+        <div style="width:120px;display:flex;gap:8px;align-items:center;justify-content:center">
+          <img src="https://placehold.co/80x40/png?text=Logo" alt="logo" style="height:36px;object-fit:contain">
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="section-title">Pricing (Typical Packages)</div>
+      <div class="pricing">
+        <div class="card">
+          <h4>Basic</h4>
+          <div style="font-weight:800;font-size:20px;margin-top:8px">$399</div>
+          <ul style="color:var(--muted);margin-top:12px">
+            <li>Landing page</li><li>SEO basics</li><li>1 week delivery</li>
+          </ul>
+          <div style="margin-top:12px"><button class="btn primary">Start</button></div>
+        </div>
+        <div class="card">
+          <h4>Standard</h4>
+          <div style="font-weight:800;font-size:20px;margin-top:8px">$999</div>
+          <ul style="color:var(--muted);margin-top:12px">
+            <li>Multi-page site</li><li>SEO & SMM setup</li><li>2-3 weeks</li>
+          </ul>
+          <div style="margin-top:12px"><button class="btn primary">Start</button></div>
+        </div>
+        <div class="card">
+          <h4>Premium</h4>
+          <div style="font-weight:800;font-size:20px;margin-top:8px">$2499</div>
+          <ul style="color:var(--muted);margin-top:12px">
+            <li>Custom web app</li><li>Branding & kit</li><li>Ongoing support</li>
+          </ul>
+          <div style="margin-top:12px"><button class="btn primary">Start</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">Contact</div>
+      <div class="contact-grid">
+        <form id="contactForm" class="card" autocomplete="on">
+          <input type="text" name="name" id="name" placeholder="Your name" required />
+          <input type="email" name="email" id="email" placeholder="Email" required />
+          <input type="text" name="subject" id="subject" placeholder="Subject" />
+          <textarea name="message" id="message" rows="6" placeholder="Project details" required></textarea>
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+            <button type="submit" class="btn primary">Send message</button>
+            <div id="formStatus" style="color:var(--muted)"></div>
+          </div>
+          <div style="font-size:12px;color:var(--muted);margin-top:8px">Messages auto-save locally. Submissions are posted to Google Sheets.</div>
+        </form>
+
+        <aside class="card">
+          <div style="font-weight:700">Real-time status</div>
+          <div style="margin-top:8px">Availability: <span id="availability" style="display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041022;font-weight:700;margin-left:8px">Available Now</span></div>
+          <div style="margin-top:12px;color:var(--muted)">
+            <div>Email: <a href="mailto:you@domain.com">you@domain.com</a></div>
+            <div style="margin-top:8px">Phone: <a href="tel:+8801XXXXXXXX">+8801XXXXXXXX</a></div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a href="https://wa.me/8801XXXXXXX" class="btn ghost">WhatsApp</a>
+              <a href="https://m.me/yourpage" class="btn ghost">Messenger</a>
+            </div>
+          </div>
+
+          <div style="margin-top:16px">
+            <div style="font-weight:700">Subscribe</div>
+            <form id="mcForm" method="POST" action="" style="margin-top:8px;display:flex;gap:8px">
+              <input name="EMAIL" placeholder="Email" />
+              <button type="submit" class="btn primary">Subscribe</button>
+            </form>
+            <div style="font-size:12px;color:var(--muted);margin-top:8px">(Connect this form to Mailchimp by adding the form action URL.)</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Farhana — Built with care • <a href="/sitemap.xml">Sitemap</a>
+    </footer>
+  </main>
+
+  <!-- Floating Chat -->
+  <div class="chat">
+    <div class="card" id="chatBox" style="display:none;width:260px;"> 
+      <div style="font-weight:700">Hi! How can I help?</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:8px">Quick responses available on WhatsApp.</div>
+      <div style="margin-top:10px;display:flex;gap:8px"><a href="https://wa.me/8801XXXXXXX" class="btn">WhatsApp</a><button class="btn ghost" onclick="toggleChat()">Close</button></div>
+    </div>
+    <button class="btn" id="chatBtn" onclick="toggleChat()">Chat</button>
+  </div>
+
+  <script>
+    // -------------- CONFIG PLACEHOLDERS --------------
+    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_SCRIPT/exec'; // POST endpoint to save to Google Sheets
+    const MAILCHIMP_ACTION = ''; // add your Mailchimp form action URL here
+
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // live typing
+    (function(){
+      const skills = ['React','Next.js','Tailwind','SEO','SMM','UI/UX'];
+      let idx=0; let char=0; const el=document.getElementById('liveTyping');
+      function step(){
+        const word = skills[idx%skills.length];
+        char++;
+        el.textContent = word.slice(0,char);
+        if(char>=word.length){ setTimeout(()=>{ char=0; idx++; step(); },900); } else { setTimeout(step,120); }
+      }
+      step();
+    })();
+
+    // counters animate
+    function animateCounter(id,to,duration=1400){
+      const el=document.getElementById(id);let start=0;const step= Math.max(10,Math.floor(duration/to));
+      const t=setInterval(()=>{start++; el.textContent = Math.floor((start/duration)*to); if(start>duration){clearInterval(t); el.textContent=to; }}, step);
+    }
+    animateCounter('counterYears',5); animateCounter('counterProjects',48); animateCounter('counterClients',22);
+
+    // intersection observer for fade-up
+    const io = new IntersectionObserver(entries=>{entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in-view'); io.unobserve(e.target)} })},{threshold:0.15});
+    document.querySelectorAll('.fade-up').forEach(n=>io.observe(n));
+
+    // theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('site-theme');
+    if(savedTheme) root.className = savedTheme;
+    themeToggle.addEventListener('click',()=>{ const next = root.classList.contains('light') ? '' : 'light'; root.className = next; localStorage.setItem('site-theme', next); });
+
+    // portfolio filters & modal
+    document.querySelectorAll('.filters .filter').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filters .filter').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('#portfolioGrid .project').forEach(p=>{
+        const tags = p.dataset.tags.split(',');
+        if(filter==='all' || tags.includes(filter)) p.style.display='flex'; else p.style.display='none';
+      });
+    }));
+
+    // project click -> modal
+    document.querySelectorAll('.project').forEach(p=>p.addEventListener('click',()=>{
+      const title = p.querySelector('div > div').textContent;
+      const meta = p.querySelector('.meta').textContent;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = meta + ' — Project details and case study would go here.';
+      const bg = p.style.backgroundImage.match(/url\("?(.*?)"?\)/); const img = bg ? bg[1] : 'https://placehold.co/900x500/png?text=Preview';
+      document.getElementById('modalImage').src = img;
+      document.getElementById('modal').classList.add('open'); document.getElementById('modal').setAttribute('aria-hidden','false');
+    }));
+    document.getElementById('closeModal').addEventListener('click',()=>{document.getElementById('modal').classList.remove('open'); document.getElementById('modal').setAttribute('aria-hidden','true');});
+
+    // contact form auto-save to localStorage and send to Google Apps Script
+    const form = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    const draftKey = 'contactDraft_v1';
+    // restore
+    const saved = localStorage.getItem(draftKey);
+    if(saved){ try{ const data = JSON.parse(saved); ['name','email','subject','message'].forEach(k=>{ if(data[k]) document.getElementById(k).value = data[k];}); formStatus.textContent = 'Draft restored'; setTimeout(()=>formStatus.textContent='','2000'); }catch(e){}
+    }
+    // auto-save
+    ['name','email','subject','message'].forEach(id=>document.getElementById(id).addEventListener('input', ()=>{
+      const data = {name: document.getElementById('name').value, email: document.getElementById('email').value, subject: document.getElementById('subject').value, message: document.getElementById('message').value};
+      localStorage.setItem(draftKey, JSON.stringify(data));
+    }));
+
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault(); formStatus.textContent = 'Sending...';
+      const payload = { name: document.getElementById('name').value, email: document.getElementById('email').value, subject: document.getElementById('subject').value, message: document.getElementById('message').value, date: new Date().toISOString() };
+      try{
+        const res = await fetch(GOOGLE_APPS_SCRIPT_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+        const data = await res.json();
+        if(data.result==='success'){ formStatus.textContent = 'Message sent ✓'; localStorage.removeItem(draftKey); form.reset(); } else { throw new Error('failed'); }
+      }catch(err){ console.error(err); formStatus.textContent = 'Error sending — saved locally.' }
+    });
+
+    // Mailchimp hookup (if user adds action URL)
+    if(MAILCHIMP_ACTION){ document.getElementById('mcForm').action = MAILCHIMP_ACTION; }
+
+    // Chat widget
+    function toggleChat(){ const box = document.getElementById('chatBox'); const btn = document.getElementById('chatBtn'); if(box.style.display==='none' || box.style.display===''){ box.style.display='block'; btn.textContent='Close'; } else { box.style.display='none'; btn.textContent='Chat'; } }
+    window.toggleChat = toggleChat;
+
+    // availability indicator (example dynamic) - toggles based on hours
+    const availEl = document.getElementById('availability');
+    (function(){ const h = new Date().getHours(); if(h>=22||h<8){ availEl.textContent='Busy'; availEl.style.background='linear-gradient(90deg,#6b7280,#111827)'; } else { availEl.textContent='Available Now'; }})();
+
+    // sitemap hint: generate simple sitemap.xml on server or host manual file
+    // SEO tip: compress images, add og:image, and upload sitemap.xml to root
+
+    // performance touches: defer non-critical images (not implemented here due to placeholders)
+
+    // progressive enhancement: keyboard accessible modal
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') document.getElementById('modal').classList.remove('open'); });
+
+  </script>
+</body>
+</html>
